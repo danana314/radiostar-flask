@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RadioStar</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<div id="layout">
+     <!--Menu toggle-->
+    <a href="#menu" id="menuLink" class="menu-link">
+         <!--Hamburger icon-->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu" id="sourceContainer">
+            <a class="pure-menu-heading" href="#">RadioStar</a>
+
+            <ul class="pure-menu-list">
+              
+              <li class="pure-menu-item"><button class="pure-button" id="addUrlBtn">+</button></li>
+                <div id="addUrlDiv" style="display:none;">
+                  <li class="pure-menu-item"><input type="text" name="url" /></li>
+                </div>
+                
+                <li class="pure-menu-item"><button class="pure-menu-link source-button" value="https://news.google.com/news/section?output=rss">Google News</button></li>
+                <li class="pure-menu-item"><button class="pure-menu-link source-button" value="http://www.ozy.com/XmlServers/DailyDoseRSS.aspx">OZY</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="player-control">
+          <button class="pure-button"><img alt="back" src="static/img/control_back.png"></button>
+          <button class="pure-button"><img id="playBtn" alt="play" src="static/img/control_play_up.png"></button>
+          <button class="pure-button"><img alt="next" src="static/img/control_next.png"></button>
+        </div>
+        
+        <div class="content">
+          <div id="contentContainer">
+            <div id="activeContent"></div>
+            <div id="queuedContent">
+              <ul>
+              </ul>
+            </div>
+          </div>
+          
+            <h2 class="content-subhead">How to use this layout</h2>
+            <p>
+                To use this layout, you can just copy paste the HTML, along with the CSS in <a href="/css/layouts/side-menu.css" alt="Side Menu CSS">side-menu.css</a>, and the JavaScript in <a href="/js/ui.js">ui.js</a>. The JS file uses vanilla JavaScript to simply toggle an <code>active</code> class that makes the menu responsive.
+            </p>
+        </div>
+    </div>
+</div>
+  
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <script src="static/js/ui.js"></script>
+  <script src="static/js/main.js"></script>
+
+</body>
+</html>
