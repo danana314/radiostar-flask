@@ -2,11 +2,6 @@ body {
     color: #777;
 }
 
-.pure-img-responsive {
-    max-width: 100%;
-    height: auto;
-}
-
 /*
 Add transition to containers so they can push in and out.
 */
@@ -47,10 +42,7 @@ The content `<div>` is where all your content goes.
 }
 
 .player-control {
-   margin: 0;
-   color: #333;
    text-align: center;
-   padding: 2.5em 2em 0;
    border-bottom: 1px solid #eee;
  }
     .player-control button {
@@ -58,10 +50,21 @@ The content `<div>` is where all your content goes.
         background: inherit;
     }
 
-.content-subhead {
-    margin: 50px 0 20px 0;
+#active-content {
+    margin: 20px 20px;
+    border-bottom: 1px solid #eee;
     font-weight: 300;
     color: #888;
+}
+
+#queued-content {
+  font-weight: 300;
+  color: #888;
+}
+#queued-content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 

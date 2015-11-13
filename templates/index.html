@@ -16,13 +16,13 @@
     </a>
 
     <div id="menu">
-        <div class="pure-menu" id="sourceContainer">
+        <div class="pure-menu" id="sources">
             <a class="pure-menu-heading" href="#">RadioStar</a>
 
             <ul class="pure-menu-list">
               
-              <li class="pure-menu-item"><button class="pure-button" id="addUrlBtn">+</button></li>
-                <div id="addUrlDiv" style="display:none;">
+              <li class="pure-menu-item"><button class="pure-button" id="add-url-btn">+</button></li>
+                <div id="add-url-div" style="display:none;">
                   <li class="pure-menu-item"><input type="text" name="url" /></li>
                 </div>
                 
@@ -33,25 +33,18 @@
     </div>
 
     <div id="main">
-        <div class="player-control">
-          <button class="pure-button"><img alt="back" src="static/img/control_back.png"></button>
-          <button class="pure-button"><img id="playBtn" alt="play" src="static/img/control_play_up.png"></button>
-          <button class="pure-button"><img alt="next" src="static/img/control_next.png"></button>
+        <div class="player-control" >
+          <!--<button class="pure-button"><img alt="back" src="static/img/control_back.png"></button>-->
+          <button class="pure-button"><img id="playstop" alt="play" src="static/img/control_play_up.png"></button>
+          <button class="pure-button"><img id="next" alt="next" src="static/img/control_next.png"></button>
         </div>
         
         <div class="content">
-          <div id="contentContainer">
-            <div id="activeContent"></div>
-            <div id="queuedContent">
-              <ul>
-              </ul>
-            </div>
+          <div id="active-content"></div>
+          <div id="queued-content">
+            <ul>
+            </ul>
           </div>
-          
-            <h2 class="content-subhead">How to use this layout</h2>
-            <p>
-                To use this layout, you can just copy paste the HTML, along with the CSS in <a href="/css/layouts/side-menu.css" alt="Side Menu CSS">side-menu.css</a>, and the JavaScript in <a href="/js/ui.js">ui.js</a>. The JS file uses vanilla JavaScript to simply toggle an <code>active</code> class that makes the menu responsive.
-            </p>
         </div>
     </div>
 </div>
