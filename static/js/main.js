@@ -1,4 +1,137 @@
-$( function() {
+$(function() {
+  
+  'use strict';
+  
+  //--------------
+  // Helper Functions
+  //--------------
+  
+  // get URL display name
+  function getUrlDisplayName(url) {
+    var a = document.createElement('a');
+    a.href = url;
+    console.log(a);
+    return a.hostname;
+  }
+  
+  //--------------
+  // Models
+  //--------------
+  var Article = Backbone.Model.extend({
+    
+    defaults: function() {
+      return {
+        title: "empty article",
+        description: "empty article",
+        link: ""
+      };
+    },
+  });
+  
+  //--------------
+  // Collections
+  //--------------
+  var ArticleList = Backbone.Collection.extend({
+    model: Article,
+    url: '/parse',
+    
+    parse: function(response) {
+      return response.result;
+    }
+  });
+  
+  var UnreadArticleList = new ArticleList();
+  var ReadArticleList = new ArticleList();
+  
+  //--------------
+  // Views
+  //--------------
+  
+  // renders sources
+  var SourceView = Backbone.View.extend({
+    tagname: 'li',
+    className: 'pure-menu-item',
+    template: _.template($('#source-button-template').html()),
+    
+    render: function() {
+      this.$el.html(this.template(this.model));
+      return this;
+    }
+  });
+  
+  // renders individual articles
+  var ArticleView = Backbone.View.extend({
+    tagName: 'li',
+    template: _.template($('#item-template').html()),
+    
+    render: function() {
+      this.$el.html(this.template(this.model.toJSON()));
+      return this;
+    },
+    
+    clear: function() {
+      this.model.destroy();
+    }
+    
+  });
+  
+  // renders to full app
+  var AppView = Backbone.View.extend({
+    el: '#app',
+    
+    events: {
+      'click #playstop': 'togglePlayStop',
+      'click #next': 'next',
+      'click #add-url-btn': 'handleAddSource',
+      'click .source-button': 'getArticles',
+    },
+    
+    initialize: function() {
+      this.listenTo(UnreadArticleList, 'add', this.addArticle);
+      this.listenTo(UnreadArticleList, 'remove', this.removeArticle);
+      
+      // Initialize sources
+      this.addSource('https://news.google.com/news/section?output=rss', 'Google News');
+      this.addSource('http://www.ozy.com/XmlServers/DailyDoseRSS.aspx', 'OZY');
+    },
+    
+    handleAddSource: function() {
+      // If url added
+      var url = $('input[name="url"]').val();
+      if (url) {
+        this.addSource(url);
+      }
+      
+      // show or hide url input
+      $('input[name="url"]').val('');
+      $('#add-url-div').toggle('slow', function(){
+      });
+    },
+    
+    addSource: function(url, name) {
+      if (!name)
+      {
+        name = getUrlDisplayName(url);
+      }
+      
+      var model = {url: url, name: name};
+      var view = new SourceView({model: model});
+      this.$('#sources').append(view.render().el);
+    },
+    
+    addArticle: function(article) {
+      var view = new ArticleView({model: article});
+      this.$('#queued-content').append(view.render().el);
+    },
+    
+    getArticles: function(e) {
+      UnreadArticleList.fetch({data: {url: e.target.value}, type: 'POST'});
+    }
+  });
+  
+  var App = new AppView();
+  
+  
   var active;
   var queue;
   
@@ -44,68 +177,5 @@ $( function() {
     }
   });
   
-  // Update feed display
-  function updateQueueView(data) {
-    active = data[0];
-    queue = data.splice(1);
-    
-    // enable player controls if at least one result
-    if (active) {
-      $(".player-control").children().prop('disabled',false);
-    }
-    
-    // Queue first one
-    $('#active-content').empty();
-    $('#active-content').append(active.title + '<br/>');
-    $('#active-content').append(active.desc);
-    
-    $('#queued-content ul').empty();
-    for (var i = 0; i < queue.length; i++) {
-      $('#queued-content ul').append('<li>'+queue[i].title+'</li>');
-    }
-  }
-  
-  // Handle responses from server
-  function handleParsed(data) {
-    var articles = data.titles.map(function(e, i) {
-      return {'title': data.titles[i], 'desc': data.descriptions[i], 'link': data.links[i]};
-    });
-    updateQueueView(articles);
-  }
-  
-  // get URL display name
-  function getUrlDisplayName(url) {
-    var a = document.createElement('a');
-    a.href = url;
-    return a.hostname;
-  }
-  
-  // Show feed entry
-  $('#add-url-btn').on('click', function(e) {
-    // If url added
-    url = $('input[name="url"]').val();
-    if (url) {
-      var name = getUrlDisplayName(url);
-      $('#sources ul').append('<li class="pure-menu-item"><button class="pure-menu-link source-button" value'+url+'">'+name+'</button></li>');
-    }
-    
-    // show or hide url input
-    $('input[name="url"]').val('');
-    
-    $('#add-url-div').toggle('slow', function(){
-    });
-  });
-  
-  
-  // Get articles from selected source
-  $('.source-button').on('click', function(e) {
-    
-    $.post('/parse',
-      {
-        url: $(this).attr('value'),
-      },
-      handleParsed
-    );
-  });
 });
   

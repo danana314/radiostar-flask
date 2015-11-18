@@ -11,7 +11,8 @@ def hello_world():
 def parse_url():
   url = request.form['url']
   parsed = parser.parse_feed(url)
-  return jsonify(titles=parsed[0], descriptions=parsed[1], links=parsed[2])
+  #return jsonify(titles=parsed[0], descriptions=parsed[1], links=parsed[2])
+  return jsonify(result=parsed)
 
 if __name__ == '__main__':
     app.run(debug=True)

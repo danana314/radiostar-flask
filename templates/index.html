@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RadioStar</title>
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="static/css/pure-min.css">
   <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
+<div id="app">
 <div id="layout">
      <!--Menu toggle-->
     <a href="#menu" id="menuLink" class="menu-link">
@@ -16,18 +17,15 @@
     </a>
 
     <div id="menu">
-        <div class="pure-menu" id="sources">
+        <div class="pure-menu">
             <a class="pure-menu-heading" href="#">RadioStar</a>
 
-            <ul class="pure-menu-list">
+            <ul class="pure-menu-list" id="sources">
               
               <li class="pure-menu-item"><button class="pure-button" id="add-url-btn">+</button></li>
                 <div id="add-url-div" style="display:none;">
                   <li class="pure-menu-item"><input type="text" name="url" /></li>
                 </div>
-                
-                <li class="pure-menu-item"><button class="pure-menu-link source-button" value="https://news.google.com/news/section?output=rss">Google News</button></li>
-                <li class="pure-menu-item"><button class="pure-menu-link source-button" value="http://www.ozy.com/XmlServers/DailyDoseRSS.aspx">OZY</button></li>
             </ul>
         </div>
     </div>
@@ -39,20 +37,30 @@
           <button class="pure-button"><img id="next" alt="next" src="static/img/control_next.png"></button>
         </div>
         
-        <div class="content">
-          <div id="active-content"></div>
-          <div id="queued-content">
-            <ul>
-            </ul>
-          </div>
+        <div id="active-content"></div>
+        <div class="pure-g content">
+          <div class="pure-u-1-2"> <ul id="queued-content"></ul></div>
+          <div class="pure-u-1-2"> <ul id="played-content"></ul></div>
         </div>
     </div>
 </div>
+</div>
   
-  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
-  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <!--Templates-->
+  <script type="text/template" id="item-template">
+    <%- title %>
+  </script>
+  
+  <script type="text/template" id="source-button-template">
+    <button class="pure-menu-link source-button" value=<%- url %>><%- name %></button>
+  </script>
+  
+  <script src="static/js/jquery-1.11.3.min.js"></script>
+  <script src="static/js/jquery-ui.min.js"></script>
+  <script src="static/js/underscore.js"></script>
+  <script src="static/js/backbone.js"></script>
+  <script src="static/js/knockout-3.3.0.js"></script>
+  <script src="static/js/responsivevoice.js"></script>
   <script src="static/js/ui.js"></script>
   <script src="static/js/main.js"></script>
 

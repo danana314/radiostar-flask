@@ -60,8 +60,7 @@ The content `<div>` is where all your content goes.
 #queued-content {
   font-weight: 300;
   color: #888;
-}
-#queued-content ul {
+
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -91,9 +90,9 @@ appears on the left side of the page.
     */
     #menu button {
         color: #999;
-        background: inherit;
         border: none;
         padding: 0.6em 0 0.6em 0.6em;
+        background: inherit;
         width: 100%;
         text-align: left;
     }
