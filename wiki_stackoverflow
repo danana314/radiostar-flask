@@ -1,0 +1,417 @@
+
+
+
+
+Stack Overflow - Wikipedia, the free encyclopedia
+document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
+window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Stack_Overflow","wgTitle":"Stack Overflow","wgCurRevisionId":686431948,"wgRevisionId":686431948,"wgArticleId":21721040,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles containing potentially dated statements from March 2015","All articles containing potentially dated statements","Articles containing potentially dated statements from April 2014","Use dmy dates from March 2012","Computing websites","Internet properties established in 2008","Software developer communities","Stack Exchange network","Question-and-answer websites"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Stack_Overflow","wgRelevantArticleId":21721040,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"StackOverflow","wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wikilove-recipient":"","wikilove-anon":0,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgGatherShouldShowTutorial":true,"wgGatherEnableSample":0,"wgGatherPageImageThumbnail":"//upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Stack_Overflow_homepage.png/100px-Stack_Overflow_homepage.png","wgULSAcceptLanguageList":[],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgInternalRedirectTargetUrl":"/wiki/Stack_Overflow","wgWikibaseItemId":"Q549037","wgVisualEditorToolbarScrollOffset":0}); /* @nomin */mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"}); /* @nomin */ ;
+
+});mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","mmv.head","ext.gadget.WatchlistBase","ext.gadget.WatchlistGreenIndicators","ext.visualEditor.desktopArticleTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+} );
+
+
+
+a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stack Overflow
+
+From Wikipedia, the free encyclopedia
+  (Redirected from StackOverflow)
+
+					Jump to:					navigation, 					search
+
+For other uses, see Stack overflow (disambiguation).
+
+Stack Overflow
+
+
+
+
+
+Screenshot of Stack Overflow as of February 2015
+
+
+
+Web address
+stackoverflow.com
+
+
+Commercial?
+Yes
+
+
+
+Type of site
+
+Knowledge markets
+
+
+Registration
+Optional; Uses OpenID
+
+
+Available in
+English
+
+
+
+Content license
+
+CC-BY-SA 3.0 (for user contributions)
+
+
+Written in
+ASP.NET MVC [1]
+
+
+Owner
+Stack Exchange, Inc.
+
+
+Created by
+Joel Spolsky and Jeff Atwood
+
+
+Launched
+15 September 2008[2]
+
+
+
+Alexa rank
+
+ 52 (March 2015[update])[3]
+
+
+Current status
+Online
+
+
+Stack Overflow is a privately held website, the flagship site of the Stack Exchange Network,[4][5][6] created in 2008 by Jeff Atwood and Joel Spolsky.[7][8] It was created to be a more open alternative to earlier Q&A sites such as Experts-Exchange. The name for the website was chosen by voting in April 2008 by readers of Coding Horror, Atwood's popular programming blog.[9]
+It features questions and answers on a wide range of topics in computer programming.[10][11][12]
+The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down and edit questions and answers in a fashion similar to a wiki or Digg.[13] Users of Stack Overflow can earn reputation points and "badges"; for example, a person is awarded 10 reputation points for receiving an "up" vote on an answer given to a question, and can receive badges for their valued contributions,[14] which represents a kind of gamification of the traditional Q&A site or forum. All user-generated content is licensed under a Creative Commons Attribute-ShareAlike license.[15]
+Closing questions is a main differentiation from Yahoo! Answers and a way to prevent low quality questions.[16] The mechanism was overhauled in 2013; questions edited after being put "on hold" now appear in a review queue.[17] Jeff Atwood stated in 2010 that duplicate questions are not seen as a problem but rather they constitute an advantage if such additional questions drive extra traffic to the site by multiplying relevant keyword hits in search engines.[18]
+As of April 2014[update], Stack Overflow has over 4,000,000 registered users[19] and more than 11,000,000 questions,[20] with 10,000,000 questions celebrated[21] in late August 2015. Based on the type of tags assigned to questions, the top eight most discussed topics on the site are: Java, JavaScript, C#, PHP, Android, jQuery, Python and HTML.[22]
+
+
+
+Contents
+
+
+1 History
+
+1.1 Content criteria
+1.2 User suspension
+
+
+2 Statistics
+3 Technology
+4 Reception
+5 See also
+6 References
+7 External links
+
+
+
+History[edit]
+The website was created by Jeff Atwood and Joel Spolsky in 2008.[7] On 31 July 2008, Jeff Atwood sent out invitations encouraging his subscribers to take part in the private beta of the new website, limiting its use to those willing to test out the new software. On 15 September 2008 it was announced the public beta version was in session and that the general public was now able to use it to seek assistance on programming related issues. The design of the Stack Overflow logo was decided by a voting process.[23]
+On 3 May 2010 it was announced that Stack Overflow had raised $6 million in venture capital from a group of investors led by Union Square Ventures.[24][25]
+Content criteria[edit]
+Stack Overflow admits questions about programming that are tightly focused on a specific problem. Questions that are of a broader nature or invite answers that are inherently a matter of opinion are usually closed by a process carried out by the site's participants. The sister site programmers.stackexchange.com is intended to be a venue for some such broader questions, such as questions about agile software development in general.
+User suspension[edit]
+In April 2009, Stack Exchange implemented a policy of "timed suspension",[26] in order to curtail users who either show "No effort to learn (the community rules) and improve over time" or engage in "disruptive behavior" and become a nuisance. The suspension is accompanied by temporarily setting the user's reputation score at '1' and a notation on the user's profile page indicating the suspension and remaining duration.
+Statistics[edit]
+A 2013 study has found that 77% of users only ask one question, 65% only answer one question, and only 8% of users answer more than 5 questions.[27] As of 2011, 92% of the questions were answered, in a median time of 11 minutes.[28] Since 2013, the Stack Exchange network software automatically deletes questions that meet certain criteria, including having no answers in a certain amount of time.[29]
+As of August 2012, 443,000 of the 1.3M registered users had answered at least one question, and of those, approximately 6,000 (0.46% of the total user count) had earned a reputation score greater than 5000.[30] Reputation can be gained fastest by answering questions related to tags with lower expertise density, doing so promptly (in particular being the ﬁrst one to answer a question), being active during off-peak hours, and contributing to diverse areas.[30]
+In June 2015, 125,313 posts were deleted within the past 30 days, of which about 8% were deleted by moderators.[31]
+Technology[edit]
+Stack Overflow is written in C#[1] using the ASP.NET MVC (Model-View-Controller) framework, and Microsoft SQL Server for the database[32] and the Dapper object-relational mapper used for data access.[33] Unregistered users have access to most of the site's functionality, while users who sign in (for example, by using the OpenID service) can gain access to more functionality, such as establishing a profile and being able to earn reputation to allow functionality like re-tagging questions or voting to close a question.
+Reception[edit]
+Stack Overflow received criticism regarding its community that prevents women from actively participating in asking questions and answering them.[34] Such criticism raises that StackOverflow strongly promotes oneupmanship; fosters flame-wars and the down-voting of individuals which discourages female users from participating. The article also criticises the rewards system which allow participants to access new features and gain more control on others' postings. It is also stipulated that some users may be female believing other (male) users would be less aggressive towards them and their questions.
+See also[edit]
+
+
+
+
+Internet portal
+
+
+
+Information technology portal
+
+
+
+
+Askbot (free engine)
+OSQA (Open Source Question and Answer)
+Rosetta Code (Multi-lingual algorithms)
+List of Internet forums
+
+
+References[edit]
+
+
+^ a b "Which tools and technologies are used to build the Stack Exchange Network?". Meta Stack Overflow. Stack Overflow. 
+^ Spolsky, Joel (2008-09-15). "Stack Overflow Launches". Joel on Software. Retrieved 2014-07-07. 
+^ "Stackoverflow.com Site Info". Alexa Internet. Retrieved 2015-03-30. 
+^ Sewak, M.; et al. (18 May 2010). "Finding a Growth Business Model at Stack Overflow, Inc." (PDF). Stanford CasePublisher (Stanford University School of Engineering). Rev. 20 July 2010 (2010-204-1). 204-2010-1. Retrieved 23 May 2014. 
+^ "Stack Exchange Network Legal Links". Stack Exchange. Retrieved 2012-01-02. 
+^ Stack Overflow Internet Services, Inc. (2010-06-08). "Stack Exchange API". Stack Apps. Retrieved 2010-06-08. 
+^ a b Jeff Atwood (2008-04-16). "Introducing Stackoverflow.com". Coding Horror. Retrieved 2009-03-11. 
+^ Jeff Atwood (2008-09-16). "None of Us is as Dumb as All of Us". Coding Horror. Retrieved 2009-03-11. 
+^ Jeff Atwood (2008-04-06). "Help Name Our Website". Coding Horror. Retrieved 2014-07-14. 
+^ Alan Zeichick (2009-04-15). "Secrets of social site success". SD Times. Retrieved 2009-04-16. 
+^ "Spolsky's Software Q-and-A Site". Slashdot. 2008-09-16. Retrieved 2009-05-23. 
+^ Joel Spolsky (2009-04-24). "Google Tech Talks: Learning from StackOverflow.com". YouTube. Retrieved 2009-05-23. 
+^ Jeff Atwood (2008-09-21). "The Gamification". Coding Horror Blog. Retrieved 2011-01-24. 
+^ "What is reputation? How do I earn (and lose) it?". Stack Overflow. Retrieved 14 August 2010. 
+^ "Case Studies/StackOverflow.com". creativecommons.org. 
+^ "Closing changes: on hold, unclear, too broad, opinion-based, off-topic reasons, bye-bye to Too Localized". meta.stackexchange.com. 
+^ "The war of the closes". 
+^ "Dr. Strangedupe: Or, How I Learned to Stop Worrying And Love Duplication". stackoverflow.com. 
+^ "Users". Stack Overflow. Retrieved 15 April 2014. 
+^ "Questions". Stack Overflow. Retrieved 15 April 2014. 
+^ "Stack Overflow Thanks YOU! (10 million questions)". Stack Overflow. Retrieved 21 August 2015. 
+^ "Tags". Stack Overflow. Retrieved 9 December 2014. 
+^ "J.Atwood & J.Spolsky founding stackoverflow.com -- but we need a logo.". 99Designs.com. 30 April 2008. Retrieved 23 May 2014. 
+^ Ha, Anthony (4 May 2010). "Stack Overflow raises $6M to take its Q&A model beyond programming". VentureBeat. Retrieved 23 May 2014. The money we've raised means that, for the next ($6m / monthly burn rate) months, we can take on new projects, hire new people, and build new expert Q&A sites on a wide variety of new topics. Instead of opening sites in exchange for money, we’re about to launch a new, democratic system where anyone can propose a Q&A site, and, if it gets a critical mass of interested people, we'll create it. 
+^ Anthony, Ha (5 May 2010). "Stack Overflow Raises $6M to Take Its Q&A Model Beyond Programming". NYTimes. Retrieved 23 May 2014. 
+^ Atwood, Jeff (2009-04-06). "A Day in the Penalty Box". StackOverflow Blog. Retrieved 2009-04-06. 
+^ Wang, Shaowei; David Lo; Lingxiao Jiang (18–22 March 2013). "An Empirical Study on Developer Interactions in StackOverﬂow". Singapore Management University. Archived from the original (PDF) on 25 February 2014. 
+^ Mamykina, Lena; Bella Manoim; Manas Mittal; George Hripcsak; Björn Hartmann (2011). "Design lessons from the fastest q&a site in the west". CHI '11 Proceedings of the SIGCHI Conference on Human Factors in Computing Systems: 2857–2866. doi:10.1145/1978942.1979366. ISBN 9781450302289. 
+^ "Turbocharging the Roomba: solutions for premature deletion". stackexchange.com. 
+^ a b Bosu, Amiangshu; Christopher S. Corley; Dustin Heaton; Debarshi Chatterji; Jeffrey C. Carver; Nicholas A. Kraft (2013). "Building Reputation in StackOverﬂow: An Empirical Investigation" (PDF). Tuscaloosa, AL 35487-0290, USA: Department of Computer Science, The University of Alabama. 
+^ "What posts get deleted, and why?". Meta.StackOverflow. 10 June 2015. 
+^ Jeff Atwood (2008-09-21). "What Was Stack Overflow Built With?". Stack Overflow Blog. Retrieved 2009-05-23. 
+^ Sam Saffron (2011-03-30). "How I learned to stop worrying and write my own ORM". Retrieved 2014-07-22. 
+^ https://bvasiles.github.io/papers/socinfo12.pdf
+
+
+External links[edit]
+
+Stack Overflow
+Stack Overflow podcast
+List of Stack Exchange sites
+Stack Apps
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Fog Creek Software
+
+
+
+
+
+
+Products
+
+
+
+FogBugz
+Trello
+CityDesk
+
+
+
+
+
+
+
+
+Networks
+
+
+
+Stack Exchange
+Stack Overflow
+Ask Ubuntu
+MathOverflow
+
+
+
+
+
+
+
+
+People
+
+
+
+Joel Spolsky
+Jeff Atwood
+
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Stack_Overflow&oldid=686431948"					
+Categories: Computing websitesInternet properties established in 2008Software developer communitiesStack Exchange networkQuestion-and-answer websitesHidden categories: Articles containing potentially dated statements from March 2015All articles containing potentially dated statementsArticles containing potentially dated statements from April 2014Use dmy dates from March 2012 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Create accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+БългарскиDeutschEspañolفارسیFrançais한국어ItalianoעבריתMagyar日本語PolskiPortuguêsRomânăРусскийSuomiதமிழ்TürkçeУкраїнська中文 
+Edit links 
+
+
+
+
+
+ This page was last modified on 19 October 2015, at 02:29.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","user":"ready","user.groups":"ready"});
+} );
+
+window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.geoFeatures","ext.navigationTiming","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.visualEditor.targetLoader","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"]);
+} );window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":104,"wgHostname":"mw1075"}); /* @nomin */
+} );
+
+

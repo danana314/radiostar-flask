@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-<div id="app">
 <div id="layout">
      <!--Menu toggle-->
     <a href="#menu" id="menuLink" class="menu-link">
@@ -17,15 +16,18 @@
     </a>
 
     <div id="menu">
-        <div class="pure-menu">
+        <div class="pure-menu" id="sources">
             <a class="pure-menu-heading" href="#">RadioStar</a>
 
-            <ul class="pure-menu-list" id="sources">
+            <ul class="pure-menu-list">
               
               <li class="pure-menu-item"><button class="pure-button" id="add-url-btn">+</button></li>
                 <div id="add-url-div" style="display:none;">
                   <li class="pure-menu-item"><input type="text" name="url" /></li>
                 </div>
+                
+                <li class="pure-menu-item"><button class="pure-menu-link source-button" value="https://news.google.com/news/section?output=rss">Google News</button></li>
+                <li class="pure-menu-item"><button class="pure-menu-link source-button" value="http://www.ozy.com/XmlServers/DailyDoseRSS.aspx">OZY</button></li>
             </ul>
         </div>
     </div>
@@ -39,27 +41,27 @@
         
         <div id="active-content"></div>
         <div class="pure-g content">
-          <div class="pure-u-1-2"> <ul id="queued-content"></ul></div>
-          <div class="pure-u-1-2"> <ul id="played-content"></ul></div>
+          <div class="pure-u-1-2" id="queued-content"><ul></ul></div>
+          <div class="pure-u-1-2" id="played-content"><ul></ul></div>
         </div>
     </div>
-</div>
 </div>
   
   <!--Templates-->
   <script type="text/template" id="item-template">
-    <%- title %>
-  </script>
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+      <label><%- title %></label>
+      <a class="destroy"></a>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
   
-  <script type="text/template" id="source-button-template">
-    <button class="pure-menu-link source-button" value=<%- url %>><%- name %></button>
   </script>
   
   <script src="static/js/jquery-1.11.3.min.js"></script>
   <script src="static/js/jquery-ui.min.js"></script>
   <script src="static/js/underscore.js"></script>
   <script src="static/js/backbone.js"></script>
-  <script src="static/js/backbone.stickit.js"></script>
   <script src="static/js/knockout-3.3.0.js"></script>
   <script src="static/js/responsivevoice.js"></script>
   <script src="static/js/ui.js"></script>

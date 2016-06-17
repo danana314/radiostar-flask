@@ -14,6 +14,13 @@ $(function() {
     return a.hostname;
   }
   
+  function stripTrailingSlash(str) {
+    if(str.substr(-1) === '/') {
+        return str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+  
   //--------------
   // Models
   //--------------
@@ -27,6 +34,9 @@ $(function() {
       };
     },
   });
+  
+  var ActiveArticle = new Article();
+  ActiveArticle.clear();
   
   //--------------
   // Collections
@@ -89,10 +99,16 @@ $(function() {
     initialize: function() {
       this.listenTo(UnreadArticleList, 'add', this.addArticle);
       this.listenTo(UnreadArticleList, 'remove', this.removeArticle);
+      this.listenTo(ActiveArticle, 'change', this.activeArticleChange);
       
       // Initialize sources
       this.addSource('https://news.google.com/news/section?output=rss', 'Google News');
       this.addSource('http://www.ozy.com/XmlServers/DailyDoseRSS.aspx', 'OZY');
+      this.addSource('http://www.futurity.org/feed/', 'Futurity');
+      this.addSource('http://www.theverge.com/rss/full.xml', 'The Verge');
+      
+      // disable player control initially
+      this.disablePlayer();
     },
     
     handleAddSource: function() {
@@ -109,6 +125,7 @@ $(function() {
     },
     
     addSource: function(url, name) {
+      url = stripTrailingSlash(url);
       if (!name)
       {
         name = getUrlDisplayName(url);
@@ -119,63 +136,131 @@ $(function() {
       this.$('#sources').append(view.render().el);
     },
     
+    getArticles: function(e) {
+      UnreadArticleList.fetch({data: {url: e.target.value}, type: 'POST'});
+    },
+    
     addArticle: function(article) {
       var view = new ArticleView({model: article});
       this.$('#queued-content').append(view.render().el);
+      
+      this.enablePlayer();
     },
     
-    getArticles: function(e) {
-      UnreadArticleList.fetch({data: {url: e.target.value}, type: 'POST'});
-    }
+    removeArticle: function(article) {
+      console.log('remove article');
+      
+      if (UnreadArticleList.length === 0) {
+        this.disablePlayer();
+      }
+    },
+    
+    activeArticleChange: function(){
+      console.log('article changed');
+    },
+    
+    // Player methods
+    enablePlayer: function() {
+      $(".player-control").children().prop('disabled',false);
+    },
+    
+    disablePlayer: function() {
+      $(".player-control").children().prop('disabled',true);
+    },
+    
+    togglePlayStop: function(e) {
+      console.log('toggle play stop');
+      // responsiveVoice.speak("hello naseem!", "UK English Female");
+  
+      if (!responsiveVoice.isPlaying()) {
+        this.playActive();
+      } else {
+        responsiveVoice.cancel();
+        $('#playstop').attr('src', 'static/img/control_play_up.png');
+      }
+    },
+    
+    next: function(e) {
+      console.log('next');
+      if (UnreadArticleList.length === 0) {
+        console.log('no more new articles');
+        return;
+      }
+  
+      if (responsiveVoice.isPlaying()) {
+        responsiveVoice.cancel();
+      }
+      
+      ReadArticleList.add(ActiveArticle);
+      ActiveArticle.clear();
+      this.playActive();
+    },
+    
+    playActive: function() {
+      // if active article not set, pull one from unread list
+      if (!ActiveArticle.id) {
+        ActiveArticle.set(UnreadArticleList.pop().toJSON());
+      }
+      
+      // play
+      responsiveVoice.speak(ActiveArticle.get("description"), "UK English Female", {
+        onstart: function() {
+          console.log('playing');
+          $('#playstop').attr('src', 'static/img/control_stop.png');
+        },
+        onend: function() {
+          $('#playstop').attr('src', 'static/img/control_play_up.png');
+    
+          App.next();
+        },
+      });
+    },
+    
+    
   });
   
   var App = new AppView();
   
+  // var active;
+  // var queue;
   
-  var active;
-  var queue;
+  // // Playback controls
+  // function startCallback() {
+  //   $('#playstop').attr('src', 'static/img/control_stop.png');
+  // }
   
-  // disable player control initially
-  $(".player-control").children().prop('disabled',true);
-  
-  // Playback controls
-  function startCallback() {
-    $('#playstop').attr('src', 'static/img/control_stop.png');
-  }
-  
-  function endCallback() {
-    $('#playstop').attr('src', 'static/img/control_play_up.png');
+  // function endCallback() {
+  //   $('#playstop').attr('src', 'static/img/control_play_up.png');
     
-    // move top in queue to active
-    updateQueueView(queue);
-    playActive();
-  }
+  //   // move top in queue to active
+  //   updateQueueView(queue);
+  //   playActive();
+  // }
   
-  function playActive() {
-    responsiveVoice.speak(active, "UK English Female", {onstart: startCallback, onend: endCallback});
+  // function playActive() {
+  //   responsiveVoice.speak(active, "UK English Female", {onstart: startCallback, onend: endCallback});
+  // }
+  
+  // $('#playstop').on('click', function(e) {
+  //   if (!responsiveVoice.isPlaying()) {
+  //     playActive();
+  //   } else {
+  //     responsiveVoice.cancel();
+  //     $('#playstop').attr('src', 'static/img/control_play_up.png');
+  //   }
+  // });
+  
+  // $('#next').on('click', function(e) {
+  //   if (queue.length == 0) return;
     
-  }
-  
-  $('#playstop').on('click', function(e) {
-    if (!responsiveVoice.isPlaying()) {
-      playActive();
-    } else {
-      responsiveVoice.cancel();
-      $('#playstop').attr('src', 'static/img/control_play_up.png');
-    }
-  });
-  
-  $('#next').on('click', function(e) {
-    if (queue.length == 0) return;
-    
-    if (responsiveVoice.isPlaying()) {
-      responsiveVoice.cancel();
-      updateQueueView(queue);
-      playActive();
-    } else {
-      updateQueueView(queue);
-    }
-  });
+  //   if (responsiveVoice.isPlaying()) {
+  //     responsiveVoice.cancel();
+  //     updateQueueView(queue);
+  //     playActive();
+  //   } else {
+  //     updateQueueView(queue);
+  //   }
+  // });
   
 });
   
