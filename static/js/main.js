@@ -168,7 +168,7 @@ $(function() {
       $(".player-control").children().prop('disabled',true);
     },
     
-    togglePlayStop: function(e) {
+    togglePlayStop: function() {
       console.log('toggle play stop');
       // responsiveVoice.speak("hello naseem!", "UK English Female");
   
@@ -176,11 +176,11 @@ $(function() {
         this.playActive();
       } else {
         responsiveVoice.cancel();
-        $('#playstop').attr('src', 'static/img/control_play_up.png');
+        $('#playstop_icon').attr('src', 'static/img/control_play_up.png');
       }
     },
     
-    next: function(e) {
+    next: function() {
       console.log('next');
       if (UnreadArticleList.length === 0) {
         console.log('no more new articles');
@@ -206,10 +206,10 @@ $(function() {
       responsiveVoice.speak(ActiveArticle.get("description"), "UK English Female", {
         onstart: function() {
           console.log('playing');
-          $('#playstop').attr('src', 'static/img/control_stop.png');
+          $('#playstop_icon').attr('src', 'static/img/control_stop.png');
         },
         onend: function() {
-          $('#playstop').attr('src', 'static/img/control_play_up.png');
+          $('#playstop_icon').attr('src', 'static/img/control_play_up.png');
     
           App.next();
         },
